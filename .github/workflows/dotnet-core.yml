@@ -22,7 +22,8 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Publish
-      run: dotnet publish TestGitActions/TestGitActions.csproj --output='.\publish'
+      run: dotnet publish TestGitActions/TestGitActions.csproj --output='./publish'
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.1.3
-      path: '.\publish'
+      with:
+        path: /publish
